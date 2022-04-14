@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import './tooltip.css';
-
+import '../styles/tooltip.css';
 
 export default function TooltipHover(props: any) {
     let delayShow: any;
