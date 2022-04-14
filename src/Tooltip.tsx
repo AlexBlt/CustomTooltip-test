@@ -16,9 +16,8 @@ export default function Tooltip(props: any) {
     case 'fixed':
      return( <TooltipFixed position={props.position} content={props.content}>{props.children}</TooltipFixed>)
   }
-  
-
-    
  
- 
+  return(
+<TooltipHover content={props.content}>{props.children}</TooltipHover>
+  );
 }

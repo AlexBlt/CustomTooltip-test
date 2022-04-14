@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Tooltip from './Tooltip';
 
 function App() {
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h2>Custom Tooltip Component</h2>
       </header>
+
+      <div className="wrapper">
+        <Tooltip content={<pre>Balise html pre</pre>}>
+          <button>tooltip balise</button>
+        </Tooltip> </div>
+
+
+      <div className="wrapper">
+        <Tooltip content="Sed ut perspiciatis unde omnis iste natus error sit voluptatem" position="bottom">
+          <input type="text"></input>
+        </Tooltip>
+      </div>
+
+      <div className="wrapper">
+        <Tooltip content="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium " type="mouse">
+          <button>Follow mouse</button>
+        </Tooltip> </div>
+
+
+      <div className="wrapper">
+        <Tooltip content="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium" position="bottom">
+          <button>Bottom tooltip</button>
+        </Tooltip></div>
     </div>
+
   );
 }
 
