@@ -20,5 +20,5 @@ Une chaîne de caractère peut être fournie, tout comme un composant HTML.
 
 ##### Axes d'améliorations
 
-De nombreuses pistes sont à explorer pour améliorer ce travail. Tout d'abord, finaliser la troisème solution sur les input/focus event. Ensuite, une partie du CSS comporte des valeurs absolues plutôt que relatives/responsives. 
+De nombreuses pistes sont à explorer pour améliorer ce travail. Tout d'abord, finaliser la troisème solution sur les input/focus event. Ensuite, une partie du CSS comporte des valeurs absolues plutôt que relatives/responsives. L'ajout d'animations simples comme une opacité progressive via transition en CSS.
 D'autres solutions auxquelles je n'ai pas pensé sont sûrement possibles, il pourrait donc être utile d'y réfléchir.
