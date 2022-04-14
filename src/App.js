@@ -8,33 +8,33 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-
+        <h2>Custom Tooltip Component</h2>
       </header>
 
       <div className="wrapper">
-        <Tooltip content="test" position="top">
-          <button>tooltip</button>
+        <Tooltip content={<pre>Balise html pre</pre>}>
+          <button>tooltip balise</button>
         </Tooltip> </div>
 
 
       <div className="wrapper">
-        <Tooltip content="test">
-          <button>tooltip</button>
+        <Tooltip content="Sed ut perspiciatis unde omnis iste natus error sit voluptatem" position="bottom">
+          <input type="text"></input>
         </Tooltip>
       </div>
 
       <div className="wrapper">
-        <Tooltip content="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab " position="left">
-          <button>Bottom tooltip</button>
+        <Tooltip content="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium " type="mouse">
+          <button>Follow mouse</button>
         </Tooltip> </div>
 
 
       <div className="wrapper">
-        <Tooltip content="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab " position="bottom">
+        <Tooltip content="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium" position="bottom">
           <button>Bottom tooltip</button>
         </Tooltip></div>
-      </div> 
-  
+    </div>
+
   );
 }
 

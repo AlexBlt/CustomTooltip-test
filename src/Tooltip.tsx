@@ -1,40 +1,27 @@
 import React, { useState } from 'react';
 import './tooltip.css';
+import TooltipFixed from './TooltipFixed';
+import TooltipHover from './TooltipHover';
 
 
 export default function Tooltip(props: any) {
-  let positions: Array<string> = ['top', 'right', 'bottom', 'left'];
+  let types: Array<String> = ['mouse', 'fixed'];
 
-  let delayShow, delayHide: any;
-  let position: string = positions.includes(props.position) ? props.position : 'right';
+  let tooltipType: any;
+  let selectedType: string = types.includes(props.type) ? props.type : 'fixed';
+  console.log(props)
+  switch(selectedType) {
+    case 'mouse':
+      return (<TooltipHover content={props.content}>{props.children}</TooltipHover>);
+      break;
 
-  const [isVisible, setVisibility] = useState(false);
+    case 'fixed':
+     return( <TooltipFixed position={props.position} content={props.content}>{props.children}</TooltipFixed>)
+     break;
+  }
+  
 
-  const showTooltip = () => {
-    delayShow = setTimeout(() => {
-      setVisibility(true);
-    }, props.delayShow || 300);
-  };
-
-  const hideTooltip = () => {
-    delayHide = setTimeout(() => {
-      setVisibility(false);
-    }, props.delayHide || 100);
-  };
-
-  return (
-    <div className="container">
-      <div className="wrapper" onMouseEnter={showTooltip} onMouseLeave={hideTooltip} >
-        {props.children}
-      </div>
-
-      {isVisible ?
-        <div className={`custom-tooltip ${position}`}>
-          {props.content}
-        </div>
-        : null
-      }
-
-    </div>
-  );
+    
+ 
+ 
 }
