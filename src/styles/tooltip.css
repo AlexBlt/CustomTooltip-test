@@ -25,6 +25,24 @@
   
 }
 
+.custom-tooltip-hover {
+  opacity: 0.7;
+  padding: 10px 10px 10px 10px;
+  min-height: 15%;
+  max-height: inherit;
+  min-width: 20%;
+  max-width: 40%;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  border-bottom: 1px dotted black;
+  z-index: 50;
+  word-wrap: normal;
+  position:fixed;
+ 
+}
+
 .left {
   transform: translateX(-100%) translateY(-50%);
 }

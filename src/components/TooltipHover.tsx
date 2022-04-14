@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../styles/tooltip.css';
 
 export default function TooltipHover(props: any) {
@@ -9,11 +9,12 @@ export default function TooltipHover(props: any) {
 
     const [isVisible, setVisibility] = useState(false);
 
+
     const showTooltip = (e: any) => {
-        var x = e.clientX,
-            y = e.clientY;
-        setTop(y + 20)
-        setLeft(x + 20)
+        var x = e.clientX +20,
+            y = e.clientY +20;
+        setTop(y)
+        setLeft(x)
         delayShow = setTimeout(() => {
             setVisibility(true);
         }, props.delayShow || 200);
@@ -30,17 +31,16 @@ export default function TooltipHover(props: any) {
 
     return (
         <div className="container">
-            <div className="wrapper" onMouseMove={showTooltip} onMouseLeave={hideTooltip} >
+            <div className="wrapper" onMouseMove={showTooltip} onMouseOut={hideTooltip} >
                 {props.children}
-                {isVisible ?
-                    <div className={`custom-tooltip`} style={{ 'top': top, 'left': left }}>
+            </div>
+
+            {isVisible ?
+                    <div className={`custom-tooltip-hover`} style={{ 'top': top, 'left': left }}>
                         {props.content}
                     </div>
                     : null
                 }
-            </div>
-
-
 
         </div>
     );
